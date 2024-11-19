@@ -1,0 +1,33 @@
+
+.box
+{
+    background-color: rgb(158, 248, 248); 
+  text-align: center;
+  width: 500px;
+  margin-left: 200px;
+  margin-right: 200px;
+   color:  aqua;
+ h1
+    {
+      text-align: center;
+      color: rgb(21, 92, 92);
+    }
+  
+.\.butt     
+{
+ 
+    text-align: center;
+    width: 200px;
+    height: 70px;
+    background-color: aqua;
+    border-color: aqua;
+ 
+} 
+         
+input
+    {
+       background-color: rgb(16, 114, 7);
+       height: 35px;
+    }
+ 
+}

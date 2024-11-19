@@ -1,0 +1,27 @@
+
+h1
+    {
+     text-align: center;
+    }
+    p{
+        font-size: larger;
+    }
+.num
+    {
+        input{
+      width: 600px;
+      height: 30px;
+    }
+}
+.cal
+    {
+     input
+     {
+       background-color: rgb(67, 224, 75);
+       color: white;
+       border-color:rgb(67,224,75); 
+       width:610px;
+       height:35px;
+     }   
+    }
+  
