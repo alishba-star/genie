@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Booking Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            min-width: 800px;
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 28px;
+            font-weight: 600;
+        }
+
+        .horizontal-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: end;
+            justify-content: center;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            min-width: 120px;
+        }
+
+        .form-group label {
+            font-weight: 500;
+            color: #555;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .form-group input {
+            padding: 12px 15px;
+            border: 2px solid #e1e1e1;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .form-group input:hover {
+            border-color: #999;
+        }
+
+        .search-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 140px;
+        }
+
+        .search-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .search-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .form-container {
+                min-width: auto;
+                width: 100%;
+                padding: 20px;
+            }
+            
+            .horizontal-form {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .form-group {
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Flight Booking</h1>
+        <form class="horizontal-form" id="flightForm">
+            <div class="form-group">
+                <label for="originLocationCode">From:</label>
+                <input type="text" id="originLocationCode" name="originLocationCode" value="LHE" placeholder="Origin Code" maxlength="3">
+            </div>
+            
+            <div class="form-group">
+                <label for="destinationLocationCode">To:</label>
+                <input type="text" id="destinationLocationCode" name="destinationLocationCode" value="DXB" placeholder="Destination Code" maxlength="3">
+            </div>
+            
+            <div class="form-group">
+                <label for="departureDate">Departure:</label>
+                <input type="date" id="departureDate" name="departureDate" value="2025-08-10">
+            </div>
+            
+            <div class="form-group">
+                <label for="adults">Adults:</label>
+                <input type="number" id="adults" name="adults" value="1" min="1" max="9">
+            </div>
+            
+            <div class="form-group">
+                <label for="max">Max Results:</label>
+                <input type="number" id="max" name="max" value="5" min="1" max="20">
+            </div>
+            
+            <div class="form-group">
+                <button type="submit" class="search-btn">Search Flights</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('flightForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                originLocationCode: document.getElementById('originLocationCode').value,
+                destinationLocationCode: document.getElementById('destinationLocationCode').value,
+                departureDate: document.getElementById('departureDate').value,
+                adults: parseInt(document.getElementById('adults').value),
+                max: parseInt(document.getElementById('max').value)
+            };
+            
+            console.log('Flight Search Data:', formData);
+            alert('Form submitted! Check console for data.');
+        });
+    </script>
+</body>
+</html>
